@@ -45,6 +45,8 @@ function adicionarLinha() {
 
         tabela.appendChild(novaLinha);
 
+        adicionarValidacaoNosInputs();
+
         atualizarNotas();
     } else {
         alert("Limite máximo de 15 linhas alcançado.");
@@ -60,9 +62,23 @@ function removerLinha() {
     }
 }
 
-document.querySelectorAll('input').forEach(input => {
-    input.addEventListener('input', atualizarNotas);
+function adicionarValidacaoNosInputs() {
+    document.querySelectorAll('input[type="number"]').forEach(input => {
+        input.addEventListener('input', (e) => {
+            let valor = parseFloat(e.target.value);
+
+            if (valor > 10) {
+                e.target.value = 10; 
+            } else if (valor < 0) {
+                e.target.value = 0; 
+            }
+
+            atualizarNotas();
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    adicionarValidacaoNosInputs();
+    atualizarNotas(); 
 });
-
-
-window.onload = atualizarNotas;
