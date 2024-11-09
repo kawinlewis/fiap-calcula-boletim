@@ -1,44 +1,38 @@
-/* Garante que o layout seja responsivo */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%; /* Garante que o body ocupa toda a largura */
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center;  
 }
 
-/* Cabeçalho */
 header {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    width: 100%;
-    margin-bottom: 20px;
+    width: 100%;  
+    margin-bottom: 20px; 
 }
 
-/* Contêiner da Tabela */
 .table-container {
-    width: 100%;
-    max-width: 100%; /* Certifica-se de que não ultrapasse a tela em dispositivos móveis */
+    width: 100%; 
+    max-width: 10000px; 
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
 }
 
-/* Tabela */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
-/* Bordas e padding */
 table, th, td {
     border: 1px solid #ddd;
 }
@@ -48,13 +42,11 @@ th, td {
     text-align: center;
 }
 
-/* Títulos das colunas */
 th {
     background-color: #E91C5D;
     color: white;
 }
 
-/* Alternância de cor das linhas */
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
@@ -63,36 +55,32 @@ tr:hover {
     background-color: #ddd;
 }
 
-/* Estilo dos inputs (numericos e texto) */
 input[type="number"], input[type="text"] {
     width: 100%;
-    padding: 8px;
+    padding: 1px;
     text-align: center;
     font-size: 14px;
     box-sizing: border-box;
 }
 
-/* Rodapé fixo */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
-    width: 100%;
+    position: fixed; 
+    width: 100%;    
     bottom: 0;
     left: 0;
     z-index: 10;
 }
 
-/* Títulos da tabela */
 .table-title {
     font-size: 1.5em;
     text-align: center;
     margin-bottom: 10px;
 }
 
-/* Estilo dos botões */
 .btn-adicionar, .btn-remover {
     background-color: #E91C5D;
     color: white;
@@ -106,58 +94,4 @@ footer {
 
 .btn-adicionar:hover, .btn-remover:hover {
     background-color: #c2185b;
-}
-
-/* Media Queries para Responsividade */
-
-/* Estilos para telas pequenas */
-@media (max-width: 768px) {
-    .table-container {
-        padding: 10px;
-        overflow-x: auto; /* Permite rolagem horizontal se necessário */
-    }
-
-    table {
-        width: 100%;
-        font-size: 12px; /* Diminui o tamanho da fonte nas células */
-    }
-
-    th, td {
-        padding: 6px; /* Menos padding para economizar espaço */
-    }
-
-    /* Botões: maior espaço e responsividade */
-    .btn-adicionar, .btn-remover {
-        font-size: 14px;
-        padding: 8px 16px;
-        margin: 10px 5px;
-    }
-}
-
-/* Estilos para telas menores que 480px */
-@media (max-width: 480px) {
-    body {
-        font-size: 12px; /* Menor tamanho de fonte em telas muito pequenas */
-    }
-
-    .table-container {
-        padding: 5px;
-    }
-
-    table {
-        font-size: 10px; /* Reduz o tamanho da fonte na tabela */
-    }
-
-    input[type="number"], input[type="text"] {
-        font-size: 12px; /* Ajusta o tamanho da fonte nos inputs */
-    }
-
-    footer {
-        padding: 8px 0; /* Menor espaço no rodapé */
-    }
-
-    .btn-adicionar, .btn-remover {
-        font-size: 12px; /* Diminui ainda mais o tamanho dos botões */
-        padding: 6px 12px;
-    }
 }
